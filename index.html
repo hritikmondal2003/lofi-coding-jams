@@ -12,8 +12,8 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;  /* hide horizontal scroll */
-      overflow-y: auto;    /* allow vertical scroll */
+      overflow-x: hidden;
+      overflow-y: auto;
       position: relative;
     }
     header {
@@ -50,8 +50,9 @@
       align-items: center;
     }
     iframe {
-      border-radius: 20px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
       margin-bottom: 1rem;
     }
     a.button {
@@ -64,7 +65,6 @@
       border-radius: 30px;
       font-weight: bold;
       transition: background 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       font-size: 0.9rem;
     }
     a.button:hover {
@@ -131,24 +131,16 @@
     <h2>💖 Most Loved Songs</h2>
     <div class="songs">
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/2GzjIHQ87BF2zgbmmthZzO"
-          width="200" height="80" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/2GzjIHQ87BF2zgbmmthZzO" width="200" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/5PetOhEX9N0oyBB0Keqobv"
-          width="200" height="80" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/5PetOhEX9N0oyBB0Keqobv" width="200" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/1ZbcAMnlobqTAg2gZp3po1"
-          width="200" height="80" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/1ZbcAMnlobqTAg2gZp3po1" width="200" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo"
-          width="200" height="80" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo" width="200" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   </section>
@@ -158,9 +150,7 @@
     <h2>🔥 Most Played Song</h2>
     <div class="songs">
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo"
-          width="300" height="80" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   </section>
@@ -168,21 +158,15 @@
   <!-- Playlists -->
   <div class="playlists">
     <div class="playlist">
-      <iframe src="https://open.spotify.com/embed/playlist/4PJuimY5QFBX4FKBcfX5z2"
-        width="300" height="380" frameborder="0"
-        allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/4PJuimY5QFBX4FKBcfX5z2" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
       <a class="button" href="https://open.spotify.com/playlist/4PJuimY5QFBX4FKBcfX5z2?si=Wb8syUd0RMOmRLyfZ-pqpw" target="_blank">🎵 Open on Spotify</a>
     </div>
     <div class="playlist">
-      <iframe src="https://open.spotify.com/embed/playlist/6pyIy1BnzE0dkMqgdlMxeU"
-        width="300" height="380" frameborder="0"
-        allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/6pyIy1BnzE0dkMqgdlMxeU" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
       <a class="button" href="https://open.spotify.com/playlist/6pyIy1BnzE0dkMqgdlMxeU?si=b1Jw9ePPR5-qPAHNsO0jvA" target="_blank">🎵 Open on Spotify</a>
     </div>
     <div class="playlist">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EJEq4sBQIJSmS"
-        width="300" height="380" frameborder="0"
-        allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EJEq4sBQIJSmS" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
       <a class="button" href="https://open.spotify.com/playlist/37i9dQZF1EJEq4sBQIJSmS?si=jhDPL85BTLubfRUy02Pkxw" target="_blank">🎵 Open on Spotify</a>
     </div>
   </div>
@@ -195,7 +179,6 @@
   <div class="heart-animation" id="mailbox" title="Click Me 💌"></div>
 
   <script>
-    // Create floating hearts
     function createFloatingHearts(count = 20) {
       for (let i = 0; i < count; i++) {
         const heart = document.createElement('div');
@@ -210,20 +193,17 @@
       }
     }
 
-    // On page load
     window.addEventListener('load', () => {
       createFloatingHearts(30);
     });
 
-    // On click anywhere
     document.body.addEventListener('click', () => {
       createFloatingHearts(20);
     });
 
-    // Mailbox click
     const mailbox = document.getElementById('mailbox');
     mailbox.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent double trigger
+      e.stopPropagation();
       createFloatingHearts(25);
     });
   </script>
