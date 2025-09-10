@@ -31,7 +31,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      flex-wrap: wrap; /* Keeps it responsive on small screens */
+      flex-wrap: wrap;
       padding: 1rem;
     }
     .playlist {
@@ -58,6 +58,7 @@
     iframe {
       border-radius: 20px;
       box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      margin-bottom: 1rem;
     }
     footer {
       margin-top: 2rem;
@@ -74,14 +75,14 @@
 <body>
   <header>
     <h1>💜 For My Favorite Person</h1>
-    <p>Here are two playlists full of good vibes — no need to scroll!</p>
+    <p>Here are three playlists full of good vibes — all visible without scrolling!</p>
   </header>
 
   <div class="playlists">
     <!-- First Playlist -->
     <div class="playlist">
       <iframe src="https://open.spotify.com/embed/playlist/4PJuimY5QFBX4FKBcfX5z2"
-        width="320" height="380" frameborder="0"
+        width="300" height="380" frameborder="0"
         allowtransparency="true" allow="encrypted-media">
       </iframe>
       <a class="button" href="https://open.spotify.com/playlist/4PJuimY5QFBX4FKBcfX5z2?si=Wb8syUd0RMOmRLyfZ-pqpw" target="_blank">🎵 Open on Spotify</a>
@@ -90,10 +91,19 @@
     <!-- Second Playlist -->
     <div class="playlist">
       <iframe src="https://open.spotify.com/embed/playlist/6pyIy1BnzE0dkMqgdlMxeU"
-        width="320" height="380" frameborder="0"
+        width="300" height="380" frameborder="0"
         allowtransparency="true" allow="encrypted-media">
       </iframe>
       <a class="button" href="https://open.spotify.com/playlist/6pyIy1BnzE0dkMqgdlMxeU?si=b1Jw9ePPR5-qPAHNsO0jvA" target="_blank">🎵 Open on Spotify</a>
+    </div>
+
+    <!-- Third Playlist -->
+    <div class="playlist">
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EJEq4sBQIJSmS"
+        width="300" height="380" frameborder="0"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+      <a class="button" href="https://open.spotify.com/playlist/37i9dQZF1EJEq4sBQIJSmS?si=jhDPL85BTLubfRUy02Pkxw" target="_blank">🎵 Open on Spotify</a>
     </div>
   </div>
 
