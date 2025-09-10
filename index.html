@@ -12,9 +12,12 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
     header {
       padding: 2rem 1rem;
+      position: relative;
+      z-index: 1;
     }
     h1 {
       font-size: 2.8rem;
@@ -27,34 +30,27 @@
       margin: 1.5rem 0 0.5rem;
       color: #3d2c42;
     }
-    .songs {
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #4b3a57;
+    }
+    .songs, .playlists {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
       padding: 1rem;
     }
-    .song {
+    .song, .playlist {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .song iframe {
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-      margin-bottom: 0.5rem;
-    }
-    .playlists {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding: 1rem;
-    }
-    .playlist {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    iframe {
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      margin-bottom: 1rem;
     }
     a.button {
       display: inline-block;
@@ -77,17 +73,52 @@
       padding: 1rem;
       font-size: 1rem;
       color: #3d3553;
+      position: relative;
+      z-index: 1;
     }
     .heart {
       color: #ff6b81;
       font-size: 1.4rem;
     }
+
+    /* Heart animation */
+    .heart-animation {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: url('https://i.ibb.co/ZVh01dm/love-mailbox.png') no-repeat center/contain;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .floating-heart {
+      position: absolute;
+      font-size: 24px;
+      color: #ff6b81;
+      animation: floatUp 3s ease-out forwards;
+      user-select: none;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <h1>💜 For My Favorite Person</h1>
-    <p>Here are some most loved and most played songs, along with my favorite playlists!</p>
+    <p>Open the mailbox and let the hearts fly! 🎵💌</p>
   </header>
 
   <!-- Most Loved Songs -->
@@ -136,7 +167,6 @@
 
   <!-- Playlists -->
   <div class="playlists">
-    <!-- First Playlist -->
     <div class="playlist">
       <iframe src="https://open.spotify.com/embed/playlist/4PJuimY5QFBX4FKBcfX5z2"
         width="300" height="380" frameborder="0"
@@ -144,8 +174,6 @@
       </iframe>
       <a class="button" href="https://open.spotify.com/playlist/4PJuimY5QFBX4FKBcfX5z2?si=Wb8syUd0RMOmRLyfZ-pqpw" target="_blank">🎵 Open on Spotify</a>
     </div>
-
-    <!-- Second Playlist -->
     <div class="playlist">
       <iframe src="https://open.spotify.com/embed/playlist/6pyIy1BnzE0dkMqgdlMxeU"
         width="300" height="380" frameborder="0"
@@ -153,8 +181,6 @@
       </iframe>
       <a class="button" href="https://open.spotify.com/playlist/6pyIy1BnzE0dkMqgdlMxeU?si=b1Jw9ePPR5-qPAHNsO0jvA" target="_blank">🎵 Open on Spotify</a>
     </div>
-
-    <!-- Third Playlist -->
     <div class="playlist">
       <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EJEq4sBQIJSmS"
         width="300" height="380" frameborder="0"
@@ -167,5 +193,25 @@
   <footer>
     ✨ Made with love, just for you <span class="heart">♥</span> ✨
   </footer>
+
+  <!-- Mailbox Heart Animation -->
+  <div class="heart-animation" id="mailbox" title="Click Me 💌"></div>
+
+  <script>
+    const mailbox = document.getElementById('mailbox');
+
+    mailbox.addEventListener('click', () => {
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.style.left = (50 + (Math.random() - 0.5) * 60) + 'vw';
+        heart.style.animationDuration = (2 + Math.random() * 2) + 's';
+        heart.textContent = '💖';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+    });
+  </script>
+
 </body>
 </html>
