@@ -12,8 +12,8 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      overflow-x: hidden;  /* hide horizontal scroll */
+      overflow-y: auto;    /* allow vertical scroll */
       position: relative;
     }
     header {
@@ -195,13 +195,13 @@
   <div class="heart-animation" id="mailbox" title="Click Me 💌"></div>
 
   <script>
-    // Function to create floating hearts
+    // Create floating hearts
     function createFloatingHearts(count = 20) {
       for (let i = 0; i < count; i++) {
         const heart = document.createElement('div');
         heart.classList.add('floating-heart');
         heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.top = Math.random() * window.innerHeight + 'px';
         heart.style.animationDuration = (2 + Math.random() * 3) + 's';
         heart.style.fontSize = (12 + Math.random() * 24) + 'px';
         heart.textContent = '💖';
@@ -210,20 +210,20 @@
       }
     }
 
-    // Trigger hearts on page load
+    // On page load
     window.addEventListener('load', () => {
       createFloatingHearts(30);
     });
 
-    // Trigger hearts on click anywhere
+    // On click anywhere
     document.body.addEventListener('click', () => {
       createFloatingHearts(20);
     });
 
-    // Mailbox click (optional extra hearts)
+    // Mailbox click
     const mailbox = document.getElementById('mailbox');
     mailbox.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent triggering the body click twice
+      e.stopPropagation(); // prevent double trigger
       createFloatingHearts(25);
     });
   </script>
