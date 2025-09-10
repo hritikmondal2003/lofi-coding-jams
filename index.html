@@ -22,10 +22,27 @@
       color: #3d2c42;
       text-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #4b3a57;
+    h2 {
+      font-size: 2rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #3d2c42;
+    }
+    .songs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .song {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .song iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      margin-bottom: 0.5rem;
     }
     .playlists {
       display: flex;
@@ -55,11 +72,6 @@
     a.button:hover {
       background: #7b68ee;
     }
-    iframe {
-      border-radius: 20px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
-      margin-bottom: 1rem;
-    }
     footer {
       margin-top: 2rem;
       padding: 1rem;
@@ -75,9 +87,54 @@
 <body>
   <header>
     <h1>💜 For My Favorite Person</h1>
-    <p>Here are three playlists full of good vibes — all visible without scrolling!</p>
+    <p>Here are some most loved and most played songs, along with my favorite playlists!</p>
   </header>
 
+  <!-- Most Loved Songs -->
+  <section>
+    <h2>💖 Most Loved Songs</h2>
+    <div class="songs">
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/2GzjIHQ87BF2zgbmmthZzO"
+          width="200" height="80" frameborder="0"
+          allowtransparency="true" allow="encrypted-media">
+        </iframe>
+      </div>
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/5PetOhEX9N0oyBB0Keqobv"
+          width="200" height="80" frameborder="0"
+          allowtransparency="true" allow="encrypted-media">
+        </iframe>
+      </div>
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/1ZbcAMnlobqTAg2gZp3po1"
+          width="200" height="80" frameborder="0"
+          allowtransparency="true" allow="encrypted-media">
+        </iframe>
+      </div>
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo"
+          width="200" height="80" frameborder="0"
+          allowtransparency="true" allow="encrypted-media">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Most Played Song -->
+  <section>
+    <h2>🔥 Most Played Song</h2>
+    <div class="songs">
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/0kT0RwW83Yl0Vrym7moHAo"
+          width="300" height="80" frameborder="0"
+          allowtransparency="true" allow="encrypted-media">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Playlists -->
   <div class="playlists">
     <!-- First Playlist -->
     <div class="playlist">
