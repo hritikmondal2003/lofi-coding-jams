@@ -12,6 +12,9 @@ This playlist blends **lo-fi beats, mellow electronic, and indie tunes** to keep
 **▶️ Listen on Spotify:**  
 [Click here to open the playlist](https://open.spotify.com/playlist/4PJuimY5QFBX4FKBcfX5z2?si=Wb8syUd0RMOmRLyfZ-pqpw)  
 
+**🌍 Live Website:**  
+[https://spotify-playlist-xi.vercel.app/](https://spotify-playlist-xi.vercel.app/)  
+
 ---
 
 ## 🎧 About the Playlist
